@@ -5,7 +5,12 @@
 git clone https://github.com/freifunk-gluon/gluon.git
 cd gluon
 git clone https://github.com/c3d2/gluon-site.git site
-echo "PACKAGES_DDMESH_REPO=git://github.com/c3d2/gluon-packages.git" >> modules
+cat >> modules <<'EOF'
+GLUON_FEEDS='openwrt gluon routing luci ddmesh'
+
+PACKAGES_DDMESH_REPO=git://github.com/c3d2/gluon-packages.git
+PACKAGES_DDMESH_COMMIT=72eb0ce27a8cf9f2fc5333ae2f3872a67db7418c
+EOF
 # Bauen:
 make update
 make GLUON_TARGET=x86-generic
