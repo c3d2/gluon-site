@@ -20,7 +20,7 @@ make GLUON_TARGET=x86-generic
 
 ```bash
 gzip -cd < images/factory/gluon-...-x86-generic.img.gz > /tmp/img
-kvm -hda /tmp/img -net tap -net nic
+qemu-system-i386 --enable-kvm -drive file=/tmp/img,format=raw -net tap -net nic -serial mon:stdio -nographic
 ```
 
 [Mehr Doku](http://gluon.readthedocs.org/en/latest/user/getting_started.html#building-the-images)
