@@ -2,13 +2,8 @@ GLUON_SITE_PACKAGES := \
 	gluon-mesh-batman-adv-15 \
 	gluon-alfred \
 	gluon-announced \
-	gluon-config-mode-hostname \
-	gluon-config-mode-geo-location \
-	gluon-config-mode-contact-info \
 	gluon-ebtables-filter-multicast \
 	gluon-ebtables-filter-ra-dhcp \
-	gluon-luci-admin \
-	gluon-luci-portconfig \
 	gluon-radvd \
 	gluon-status-page \
 	gluon-ddmesh \
@@ -16,7 +11,13 @@ GLUON_SITE_PACKAGES := \
 	iwinfo \
 	iptables \
 	haveged \
-	wpad
+	wpad-mini \
+	-ppp \
+	-ppp-mod-pppoa \
+	-ppp-mod-pppoe \
+	-gluon-luci-admin \
+	-luci-base \
+	-luci-lib-nixio
 
 
 DEFAULT_GLUON_RELEASE := 0.6+exp$(shell date '+%Y%m%d')
